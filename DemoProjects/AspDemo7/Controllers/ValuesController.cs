@@ -3,29 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
-using EF7Demo;
 
-namespace AspDemo2.Controllers
+namespace AspDemo7.Controllers
 {
     [Route("api/[controller]")]
-    public class BlogController : Controller
+    public class ValuesController : Controller
     {
-        private static int _i = 0;
-
         // GET: api/values
         [HttpGet]
-        public IEnumerable<Blog> Get()
+        public IEnumerable<string> Get()
         {
-            var ctx = new BloggingContext();
-            int id = (++_i);
-            var blog = new Blog
-            {
-                Url = "Testurl" + id,
-                BlogId = id
-            };
-            ctx.Add(blog);
-
-            return ctx.Blogs.OrderByDescending(b => b.BlogId).Take(3);
+            return new string[] { "value1", "value2" };
         }
 
         // GET api/values/5

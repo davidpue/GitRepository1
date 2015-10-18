@@ -27,7 +27,7 @@ namespace ConsoleApplication1
             persons.Add(p2);
             Person p3 = null;
             persons.Add(p3);
-
+            
             // runtime exception filter with when
             foreach (var p in persons)
             {

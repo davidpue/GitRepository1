@@ -12,19 +12,32 @@ namespace EF7Demo
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<Post> Posts { get; set; }
 
-        public BloggingContext()
+        public BloggingContext() : base()
         {
             Database.EnsureCreated();
-            Database.Migrate();
+            //Database.Migrate();
             
         }
-        
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+
+
+
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    base.OnConfiguring(optionsBuilder);
+        //    optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=EFGetStarted.ConsoleApp;Trusted_Connection=True;");
+
+
+        //}
+        //EntityOptionsBuilder
+        protected override void OnConfiguring(EntityOptionsBuilder optionsBuilder)
         {
-            base.OnConfiguring(optionsBuilder);
+            //var connectionStringBuilder = new SqliteConnectionStringBuilder { DataSource = "test.db" };
+            //var connectionString = connectionStringBuilder.ToString();
+            //var connection = new SqliteConnection(connectionString);
+
+            //optionsBuilder.UseSqlite(connection);
             optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=EFGetStarted.ConsoleApp;Trusted_Connection=True;");
-            
-            
+
         }
 
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
