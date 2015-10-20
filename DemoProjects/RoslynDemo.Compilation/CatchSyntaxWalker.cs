@@ -10,7 +10,7 @@ namespace RoslynDemo.Compilation
 {
     class CatchSyntaxWalker : CSharpSyntaxWalker
     {
-
+        
         public override void VisitCatchClause(CatchClauseSyntax node)
         {
             if (!node.Block.Statements.Any())

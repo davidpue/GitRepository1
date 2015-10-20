@@ -15,7 +15,7 @@ namespace RoslynDemo.Compilation
 
         static void Main(string[] args)
         {
-            // Execute();
+            //Execute();
             //new Demo2().Execute();
             new Demo3().Execute();
         }
